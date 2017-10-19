@@ -1,9 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>ebooks.vn-Web đọc ebooks lớn nhất VN!</title>
+    <meta charset="utf-8">
+    <meta name="author" content="pixelhint.com">
+    <meta name="description" content="La casa free real state fully responsive html5/css3 home page website template" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -17,28 +20,47 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Ebooks.vn", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Top ebooks hay</a></li>
+                    <li><a href="#">Danh sách ebooks</a></li>
+                    <li>@Html.ActionLink("Liên Hệ", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+    <section class="hero">
+        <section class="caption">
+            <h2 class="caption">Ebooks.vn</h2>
+            <h1 class="properties">Trang web đọc ebooks lớn nhất Việt Nam</h1>
+        </section>
+    </section><!--  end hero section  -->
+    @*Render Section Đăng Ký, Đăng Nhập*@
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        @RenderSection("DangKy_DangNhap",false)
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @*Đưa chủ đề vào partial View*@
+    <div class="DSChuDe">
+        <h1>Danh sách chủ đề</h1>
+    </div>
+    @Html.Action("ChuDePartial", "ChuDe")<br />
+    <div class="container">
+        @*Đưa NXB vào partial view*@
+        <div class="NXBLeft">
+            <h2 class="fontNXB">Nhà Xuất Bản</h2><hr />
+            @Html.Action("NhaXuatBanPartial", "NhaXuatBan")
+        </div>
+        @*Đưa sách vào view*@
+        <div class="SachRight">
+            @RenderBody()
+        </div>
+    </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

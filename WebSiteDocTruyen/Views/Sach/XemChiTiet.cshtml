@@ -1,0 +1,16 @@
+﻿@using WebSiteDocTruyen.Models;
+@model Sach
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xem Chi Tiết</h2>
+<div>
+    <div>
+        @Model.MaSach
+    </div>
+    <div>
+        @Model.TenSach
+    </div>
+</div>

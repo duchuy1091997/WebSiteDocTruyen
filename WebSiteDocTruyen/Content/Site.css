@@ -1,24 +1,156 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/*Màu cho Menu*/
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
 }
 
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-inverse {
+    background-color: #bfd9f2;
+    border-color:#bfd9f2;
+}
+/*Css cho list Chủ Đề*/
+.DSChuDe{
+    text-align:center;
+}
+.ChuDe{
+    background-color: #bfd9f2;
+    margin-top: 20px;
+    height: 30px;
+    width: 125px;
+    margin-left: 50px;
+    position:relative;
+    text-decoration:none;
+    display:inline-block;
+}
+.lstChuDe a{
+    display:inline-block;
+    color:white;
+}
+.lstChuDe a:hover{
+    color:blue;
+}
+ul{
+    list-style-type:none;
+}
+/*Css cho NXB*/
+.fontNXB{
+    text-align:center;
+}
+.NXBLeft{
+    width:20%;
+    float:left;
+    background-color:#bfd9f2;
+}
+/*Css cho Sách*/
+.container{
+    max-width:1170px;
+    margin-top:20px;
+}
+.SachRight{
+    width:80%;
+    float:left;
+}
+.SanPham{
+    margin-left: 100px;
+	margin-bottom: 30px;
+    float: left;
+    margin-right: 40px;
+    padding: 40px;
+    border: solid 1px #c1c1c1;
+    text-align: center;
+}
+.HinhAnhSP{
+    width:200px;
+    height:300px;
+}
+img{
+    max-height:100%;
+    max-width:100%;
+}
+/*Css cho phân trang*/
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+    margin-left:40%;
+}
+/*Css cho btnXemThu*/
+.btnXemThu{
+    border-radius: 10px;
+    background-color: #bfd9f2;
+    color: white;
+}
+.hero{
+    width: 100%;
+    height: 800px;
+    position: relative;
+    background: url("/img/hero.jpg") no-repeat bottom center;
+    background-size: cover;
+}
+
+.hero .caption{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    margin-top: -105px;
+}
+
+.hero .caption h2{
+    color: #fff;
+    font-family: "P22 Corinthia";
+    font-size: 100px;
+    font-weight: lighter;
+    margin: 0;
+    position: relative;
+    display: block;
+}
+
+.hero .caption h3{
+    color: #fff;
+    font-family: "lato-regular", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: -15px 0 0 25px;
+    left: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  footer  */
+
+
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
+/*.dl-horizontal dt {
     white-space: normal;
-}
+}*/
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/

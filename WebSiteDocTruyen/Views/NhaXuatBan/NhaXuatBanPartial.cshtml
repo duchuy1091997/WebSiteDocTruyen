@@ -1,0 +1,11 @@
+﻿@using WebSiteDocTruyen.Models
+@model List<NhaXuatBan>
+@{
+    foreach (var nXB in Model)
+    {
+
+        <ul>
+            <li><a href="@Url.Action("SachTheoNXB",new { @MaNXB=nXB.MaNXB})">@nXB.TenNXB</a></li>
+        </ul>
+    }
+}

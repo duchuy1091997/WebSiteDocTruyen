@@ -1,9 +1,14 @@
-﻿@using WebSiteDocTruyen.Models;
-@using PagedList.Mvc;
-@model PagedList.PagedList<Sach>
+﻿@using WebSiteDocTruyen.Models
+@model List<Sach>
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "SachTheoNXB";
     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    if (Model.Count == 0)
+    {
+        @ViewBag.Sach
+    }
 }
 @{
     foreach (var sach in Model)
@@ -18,10 +23,9 @@
                     <span class="gia">@sach.GiaBan Đồng</span>
                 </div>
             </div>
-            <input type="submit" name="btnXemThu" class="btnXemThu" value="Xem Thử" />
+            <input type="button" name="btnXemThu" value="Xem Thử" />
         </div>
     }
 }
-@*Tạo link LK đến các trang*@
-    @Html.PagedListPager(Model,page=>Url.Action("Index",new { page=page}))
+
 

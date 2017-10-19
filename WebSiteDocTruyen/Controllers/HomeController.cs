@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using WebSiteDocTruyen.Models;
+using PagedList;
+using PagedList.Mvc;
 namespace WebSiteDocTruyen.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        EbooksEntities db = new EbooksEntities();
+        public ActionResult Index(int? page)
         {
-            return View();
+            //Tạo ra biến số sp trên trang
+            int pageSize = 4;
+            //Tạo biến số trang
+            int pageNumber=(page ?? 1);
+            var lstSach = db.Saches.ToList().ToPagedList(pageNumber,pageSize);
+            return View(lstSach);
         }
+        
 
         public ActionResult About()
         {

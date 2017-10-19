@@ -1,0 +1,18 @@
+﻿@using WebSiteDocTruyen.Models
+@model List<ChuDe>
+@{
+    foreach (var chuDe in Model)
+    {
+        <div class="ChuDe">
+            <ul>
+                <li class="lstChuDe"><a href="@Url.Action("SachTheoChuDe",new { @MaChuDe=chuDe.MaChuDe})">@chuDe.TenChuDe</a></li>
+            </ul>
+        </div>
+    }
+}
+<div class="ChuDe">
+    <ul>
+        <li class="lstChuDe"><a href="#">Khác...</a></li>
+    </ul>
+</div>
+
